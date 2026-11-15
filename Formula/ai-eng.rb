@@ -12,7 +12,7 @@ class AiEng < Formula
     libexec.install "ai-eng-0.1.0.pyz" => "ai-eng.pyz"
     (bin/"ai-eng").write <<~SH
       #!/bin/sh
-      exec "#{Formula["python@3.13"].opt_bin}/python3" "#{libexec}/ai-eng.pyz" "$@"
+      exec "#{formula_opt_bin("python@3.13")}/python3" "#{libexec}/ai-eng.pyz" "$@"
     SH
   end
 
