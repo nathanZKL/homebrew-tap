@@ -4,6 +4,7 @@ class AiEng < Formula
   url "https://github.com/nathanZKL/dual-conductor-factory/releases/download/v0.4.0/ai-eng-0.4.0.pyz"
   version "0.4.0"
   sha256 "17c80bb43cb639c5b5b368d625a66e64f82d69b61a0ab44589d066be7f78bf08"
+  revision 1
   license "MIT"
 
   depends_on "python@3.13"
@@ -12,7 +13,7 @@ class AiEng < Formula
     libexec.install "ai-eng-0.4.0.pyz" => "ai-eng.pyz"
     (bin/"ai-eng").write <<~SH
       #!/bin/sh
-      exec "#{formula_opt_bin("python@3.13")}/python3" "#{libexec}/ai-eng.pyz" "$@"
+      exec "#{formula_opt_bin("python@3.13")}/python3.13" "#{libexec}/ai-eng.pyz" "$@"
     SH
   end
 
